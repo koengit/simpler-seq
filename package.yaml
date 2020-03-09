@@ -1,0 +1,38 @@
+name:                simpler-seq
+version:             0.1.0.0
+github:              "koengit/simpler-seq"
+license:             BSD3
+author:              "Koen Claessen"
+maintainer:          "koen@chalmers.se"
+copyright:           "2020 Koen Claessen"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/koengit/simpler-seq#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- QuickCheck
+
+library:
+  source-dirs: src
+
+tests:
+  simpler-seq-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - simpler-seq

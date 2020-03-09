@@ -1,0 +1,44 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 3a6738c889b85ecbeda97844190706335c13a473c0766d0a15bed77e2946009d
+
+name:           simpler-seq
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/koengit/simpler-seq#readme>
+homepage:       https://github.com/koengit/simpler-seq#readme
+bug-reports:    https://github.com/koengit/simpler-seq/issues
+author:         Koen Claessen
+maintainer:     koen@chalmers.se
+copyright:      2020 Koen Claessen
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/koengit/simpler-seq
+
+library
+  exposed-modules:
+      Seq
+  hs-source-dirs:
+      src
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite simpler-seq-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , simpler-seq
+  default-language: Haskell2010
